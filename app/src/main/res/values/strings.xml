@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Concatenator by ViewBinding</string>
+    <string name="tvMain">Concatenator</string>
+</resources>
