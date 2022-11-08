@@ -2,6 +2,7 @@ package com.zebrano.viewbinding
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.transition.Visibility
 import android.util.Log
 import android.view.View
 import android.widget.Button
@@ -27,9 +28,25 @@ class MainActivity : AppCompatActivity() {
         bindingClass.tvMain.textSize = 24F
         bindingClass.bAction.isAllCaps = false // Выключаем ВОТ ТАКОЕ
 
+        val tiEditText = bindingClass.textInputLayout.editText
+        val editTextpn = bindingClass.editTextTextPersonName
+
+        // очистка текста
+        editTextpn.setText(String())
+
         // слушатель кнопки
         bindingClass.bAction.setOnClickListener {
+            // играемся с видимостью
+            if (bindingClass.tvMain.visibility == View.VISIBLE)
+                bindingClass.tvMain.visibility = View.INVISIBLE
+            else
+                bindingClass.tvMain.visibility = View.VISIBLE
+            // новая строка конкатенации
+            val str = editTextpn.text.toString()+tiEditText?.text.toString()
+            // применение новой строки
+            editTextpn.setText(str)
             Log.d("AppLog","Button pushed!")
+
         }
 
     }
