@@ -3,4 +3,5 @@
     <string name="tvMain">Concatenator</string>
     <string name="hint">Your text…</string>
     <string name="bAction">Concatenate!</string>
+    <string name="useless">useless</string>
 </resources>
